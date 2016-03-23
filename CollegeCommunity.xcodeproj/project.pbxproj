@@ -191,7 +191,10 @@
 		5C93CABA1CA277E700179B61 /* tab_职位.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C93CA1D1CA277E700179B61 /* tab_职位.png */; };
 		5C93CABB1CA277E700179B61 /* tab_职位@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C93CA1E1CA277E700179B61 /* tab_职位@2x.png */; };
 		5C93CABC1CA277E700179B61 /* tab_职位@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5C93CA1F1CA277E700179B61 /* tab_职位@3x.png */; };
+		5C93CAC01CA27FEB00179B61 /* StyleConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C93CABF1CA27FEB00179B61 /* StyleConfiguration.m */; };
+		5C93CAC41CA280AA00179B61 /* CCBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C93CAC31CA280AA00179B61 /* CCBaseTableViewController.m */; };
 		5C9862881C97D9BE0081CB85 /* LoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C9862871C97D9BE0081CB85 /* LoginViewModel.m */; };
+		5CBE00EA1CA2A477002DBE90 /* CCBaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CBE00E91CA2A477002DBE90 /* CCBaseTableViewCell.m */; };
 		5CEC8B061C96C66C009AE254 /* CCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC8B051C96C66C009AE254 /* CCLoginViewController.m */; };
 		5CEC8B0F1C97051A009AE254 /* CoreMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CEC8B0E1C97051A009AE254 /* CoreMethod.m */; };
 		A39D85E4AB16CD5118D4C264 /* Pods_CollegeCommunity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33611BE46F2B3A05A5630FD8 /* Pods_CollegeCommunity.framework */; };
@@ -441,8 +444,15 @@
 		5C93CA1D1CA277E700179B61 /* tab_职位.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_职位.png"; sourceTree = "<group>"; };
 		5C93CA1E1CA277E700179B61 /* tab_职位@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_职位@2x.png"; sourceTree = "<group>"; };
 		5C93CA1F1CA277E700179B61 /* tab_职位@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tab_职位@3x.png"; sourceTree = "<group>"; };
+		5C93CABE1CA27FEB00179B61 /* StyleConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StyleConfiguration.h; sourceTree = "<group>"; };
+		5C93CABF1CA27FEB00179B61 /* StyleConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StyleConfiguration.m; sourceTree = "<group>"; };
+		5C93CAC11CA2803700179B61 /* StyleDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleDefine.h; sourceTree = "<group>"; };
+		5C93CAC21CA280AA00179B61 /* CCBaseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseTableViewController.h; sourceTree = "<group>"; };
+		5C93CAC31CA280AA00179B61 /* CCBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseTableViewController.m; sourceTree = "<group>"; };
 		5C9862861C97D9BE0081CB85 /* LoginViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewModel.h; sourceTree = "<group>"; };
 		5C9862871C97D9BE0081CB85 /* LoginViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewModel.m; sourceTree = "<group>"; };
+		5CBE00E81CA2A477002DBE90 /* CCBaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCBaseTableViewCell.h; sourceTree = "<group>"; };
+		5CBE00E91CA2A477002DBE90 /* CCBaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCBaseTableViewCell.m; sourceTree = "<group>"; };
 		5CEC8B041C96C66C009AE254 /* CCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCLoginViewController.h; sourceTree = "<group>"; };
 		5CEC8B051C96C66C009AE254 /* CCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCLoginViewController.m; sourceTree = "<group>"; };
 		5CEC8B0C1C970130009AE254 /* UIDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDefine.h; sourceTree = "<group>"; };
@@ -583,6 +593,7 @@
 				5CEC8B101C970664009AE254 /* Import.h */,
 				5CEC8B0D1C97051A009AE254 /* CoreMethod.h */,
 				5CEC8B0E1C97051A009AE254 /* CoreMethod.m */,
+				5CBE00E71CA2A467002DBE90 /* View */,
 				5C93C9741CA2737600179B61 /* ViewController */,
 			);
 			path = Core;
@@ -615,6 +626,7 @@
 			children = (
 				5C7D259B1C784E270084C9F1 /* AppDelegate.h */,
 				5C7D259C1C784E270084C9F1 /* AppDelegate.m */,
+				5C93CABD1CA27D5C00179B61 /* Configuration */,
 				5CEC8AFB1C96C21F009AE254 /* ViewModel */,
 				5CEC8AFA1C96C21F009AE254 /* View */,
 				5C6A5F561C9A5D7500E8130A /* Net */,
@@ -661,6 +673,8 @@
 			children = (
 				5C93C9751CA2738900179B61 /* CCBaseViewController.h */,
 				5C93C9761CA2738900179B61 /* CCBaseViewController.m */,
+				5C93CAC21CA280AA00179B61 /* CCBaseTableViewController.h */,
+				5C93CAC31CA280AA00179B61 /* CCBaseTableViewController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -883,6 +897,25 @@
 				5C93CA1F1CA277E700179B61 /* tab_职位@3x.png */,
 			);
 			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		5C93CABD1CA27D5C00179B61 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5C93CAC11CA2803700179B61 /* StyleDefine.h */,
+				5C93CABE1CA27FEB00179B61 /* StyleConfiguration.h */,
+				5C93CABF1CA27FEB00179B61 /* StyleConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		5CBE00E71CA2A467002DBE90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5CBE00E81CA2A477002DBE90 /* CCBaseTableViewCell.h */,
+				5CBE00E91CA2A477002DBE90 /* CCBaseTableViewCell.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		5CEC8AFA1C96C21F009AE254 /* View */ = {
@@ -1270,6 +1303,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C93C9731CA270DB00179B61 /* CCRetrieveViewController.m in Sources */,
+				5C93CAC01CA27FEB00179B61 /* StyleConfiguration.m in Sources */,
+				5CBE00EA1CA2A477002DBE90 /* CCBaseTableViewCell.m in Sources */,
+				5C93CAC41CA280AA00179B61 /* CCBaseTableViewController.m in Sources */,
 				5CEC8B061C96C66C009AE254 /* CCLoginViewController.m in Sources */,
 				5C7D25A61C784E270084C9F1 /* CollegeCommunity.xcdatamodeld in Sources */,
 				5C9862881C97D9BE0081CB85 /* LoginViewModel.m in Sources */,

@@ -6,8 +6,8 @@
 //  Copyright © 2016年 chengfj. All rights reserved.
 //
 
-#import "CCBaseViewController.h"
+#import "CCBaseTableViewController.h"
 
-@interface CCRegisterViewController : CCBaseViewController
+@interface CCRegisterViewController : CCBaseTableViewController
 
 @end

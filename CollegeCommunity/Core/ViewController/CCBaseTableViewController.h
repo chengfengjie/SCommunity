@@ -1,5 +1,5 @@
 //
-//  CCBaseViewController.h
+//  CCBaseTableViewController.h
 //  CollegeCommunity
 //
 //  Created by chengfj on 16/3/23.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "StyleDefine.h"
+#import "Import.h"
 
-@interface CCBaseViewController : UIViewController
+@interface CCBaseTableViewController : UITableViewController
 
 @end

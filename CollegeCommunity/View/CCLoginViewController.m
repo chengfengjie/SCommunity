@@ -13,6 +13,7 @@
 #import "LoginViewModel.h"
 #import "ReactiveCocoa-umbrella.h"
 #import "CCRetrieveViewController.h"
+#import "CCRegisterViewController.h"
 
 @interface CCLoginViewController ()<UIGestureRecognizerDelegate>
 @property (nonatomic,strong) UIButton * userHeadButton;
@@ -231,11 +232,26 @@
         button;
     });
     [self.view addSubview:self.registerButton];
+    [self.registerButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.equalTo(self.view).with.offset(-10);
+        make.bottom.equalTo(self.view).with.offset(-10);
+        make.width.equalTo(@60);
+        make.height.equalTo(@30);
+    }];
+    [[self.registerButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        @strongify(self);
+        [self.navigationController pushViewController:[[CCRegisterViewController alloc] init] animated:YES];
+    }];
 }
 
 - (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     [super touchesEnded:touches withEvent:event];
     [self.view endEditing:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

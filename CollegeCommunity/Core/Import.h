@@ -10,4 +10,5 @@
 #define Import_h
 #import "CoreMethod.h"
 #import "UIDefine.h"
+#import "CCBaseTableViewCell.h"
 #endif

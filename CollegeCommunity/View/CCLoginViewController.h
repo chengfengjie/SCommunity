@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CCBaseViewController.h"
 
-@interface CCLoginViewController : UIViewController
+@interface CCLoginViewController : CCBaseViewController
 
 @end
