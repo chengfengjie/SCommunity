@@ -23,6 +23,7 @@
 		5C44D0821C884E7100007023 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C44D0811C884E7100007023 /* libiconv.tbd */; };
 		5C44D0841C884E7B00007023 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C44D0831C884E7B00007023 /* libz.tbd */; };
 		5C44D0861C884E8200007023 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C44D0851C884E8200007023 /* UIKit.framework */; };
+		5C6598CB1CA50E700010F44B /* ServerApiConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6598CA1CA50E700010F44B /* ServerApiConfiguration.m */; };
 		5C6A5F591C9A5D8800E8130A /* NetClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6A5F581C9A5D8800E8130A /* NetClient.m */; };
 		5C7D259A1C784E270084C9F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D25991C784E270084C9F1 /* main.m */; };
 		5C7D259D1C784E270084C9F1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7D259C1C784E270084C9F1 /* AppDelegate.m */; };
@@ -267,6 +268,8 @@
 		5C44D0811C884E7100007023 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		5C44D0831C884E7B00007023 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		5C44D0851C884E8200007023 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5C6598C91CA50E700010F44B /* ServerApiConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerApiConfiguration.h; sourceTree = "<group>"; };
+		5C6598CA1CA50E700010F44B /* ServerApiConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerApiConfiguration.m; sourceTree = "<group>"; };
 		5C6A5F571C9A5D8800E8130A /* NetClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetClient.h; sourceTree = "<group>"; };
 		5C6A5F581C9A5D8800E8130A /* NetClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetClient.m; sourceTree = "<group>"; };
 		5C7D25951C784E270084C9F1 /* CollegeCommunity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollegeCommunity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -911,6 +914,8 @@
 				5C93CAC11CA2803700179B61 /* StyleDefine.h */,
 				5C93CABE1CA27FEB00179B61 /* StyleConfiguration.h */,
 				5C93CABF1CA27FEB00179B61 /* StyleConfiguration.m */,
+				5C6598C91CA50E700010F44B /* ServerApiConfiguration.h */,
+				5C6598CA1CA50E700010F44B /* ServerApiConfiguration.m */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -1324,6 +1329,7 @@
 				5C7D259D1C784E270084C9F1 /* AppDelegate.m in Sources */,
 				5C7D259A1C784E270084C9F1 /* main.m in Sources */,
 				5CEC8B0F1C97051A009AE254 /* CoreMethod.m in Sources */,
+				5C6598CB1CA50E700010F44B /* ServerApiConfiguration.m in Sources */,
 				5CBE00F01CA2CC93002DBE90 /* ViewModel.m in Sources */,
 				5C93C97A1CA2739F00179B61 /* CCRegisterViewController.m in Sources */,
 				5CBE00ED1CA2CC22002DBE90 /* RegisterViewModel.m in Sources */,

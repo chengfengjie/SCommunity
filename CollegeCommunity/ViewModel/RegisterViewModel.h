@@ -14,4 +14,5 @@
 @property (nonatomic,copy) NSString * password;
 @property (nonatomic,strong) RACCommand * getAuthorizedCommand;
 @property (nonatomic,copy) NSString * getAuthorizedButtonTitleText;
+@property (nonatomic,strong) RACCommand * registerCommand;
 @end

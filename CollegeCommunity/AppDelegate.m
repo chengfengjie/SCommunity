@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "EMSDK.h"
 #import "CCLoginViewController.h"
+#import <SMS_SDK/SMSSDK.h>
 
 @interface AppDelegate ()
 
@@ -21,6 +22,7 @@
     
     [self configNavigationBar];
     [self configEMOClient];
+    [self configSMSDK];
     
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
@@ -147,6 +149,10 @@
 - (void)configEMOClient {
     EMOptions * options = [EMOptions optionsWithAppkey:@"chengfjcompany#collegecommunity"];
     [[EMClient sharedClient] initializeSDKWithOptions:options];
+}
+
+- (void)configSMSDK {
+    
 }
 
 @end

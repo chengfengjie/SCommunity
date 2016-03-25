@@ -37,6 +37,10 @@
                 return [self exeGetAuthorized];
             }
         }];
+        
+        self.registerCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+            return [RACSignal empty];
+        }];
     }
     return self;
 }
@@ -45,7 +49,6 @@
     return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         [subscriber sendNext:@{@"state":@"start"}];
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            //发送成功
             if (true) {
                 [subscriber sendNext:@{@"state":@"sendSuccess"}];
                 [self startTimer:subscriber];
@@ -55,7 +58,6 @@
             }
         });
         return [RACDisposable disposableWithBlock:^{
-            
         }];
     }];
 }
