@@ -10,6 +10,7 @@
 #import "EMSDK.h"
 #import "CCLoginViewController.h"
 #import <SMS_SDK/SMSSDK.h>
+#import "ServerApiConfiguration.h"
 
 @interface AppDelegate ()
 
@@ -152,7 +153,7 @@
 }
 
 - (void)configSMSDK {
-    
+    [SMSSDK registerApp:kSMSSDKAppKey withSecret:kSMSSDKAppSecret];
 }
 
 @end
