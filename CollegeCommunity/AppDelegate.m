@@ -11,6 +11,8 @@
 #import "CCLoginViewController.h"
 #import <SMS_SDK/SMSSDK.h>
 #import "ServerApiConfiguration.h"
+#import "SVProgressHUD.h"
+#import "ReactiveCocoa-umbrella.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +26,7 @@
     [self configNavigationBar];
     [self configEMOClient];
     [self configSMSDK];
+    [self configSVProgress];
     
     [self setWindow:[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]]];
     [self.window setBackgroundColor:[UIColor whiteColor]];
@@ -154,6 +157,10 @@
 
 - (void)configSMSDK {
     [SMSSDK registerApp:kSMSSDKAppKey withSecret:kSMSSDKAppSecret];
+}
+
+- (void)configSVProgress {
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
 }
 
 @end

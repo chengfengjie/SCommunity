@@ -8,9 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString *const kAPIHost;
+extern NSString *const kAPPSecrpt;
+
 typedef void(^Success)(id responseData);
 typedef void(^Failure)(NSError * error,NSString * msg);
+
 @interface NetClient : NSObject
+
 + (void)postMethod:(NSString *)method
           paramars:(NSDictionary *)paramars
            success:(Success)success

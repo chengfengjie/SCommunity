@@ -13,12 +13,27 @@
 @end
 
 @interface UIColor (Structure)
-+ (UIColor *)colorWithHex:(long)hexColor;
-+ (UIColor *)colorWithHex:(long)hexColor alpha:(float)opacity;
-+ (UIColor *)lineColor;
-+ (UIColor *)buttonBackgroundColor;
+
+/*!
+ *  @author chengfj, 16-03-25 18:03:24
+ *
+ *  @brief 通过十六进制生成颜色
+ *  @param hexColor 颜色十六进制数 例如 : 0x000000
+ *  @return 返回颜色
+ *  @since 1.0
+ */
++ (UIColor * _Nonnull)colorWithHex:(long)hexColor;
++ (UIColor * _Nonnull)colorWithHex:(long)hexColor alpha:(float)opacity;
 @end
 
 @interface NSString (Valid)
 - (BOOL)isPhoneNumber;
+@end
+
+@interface NSError (Structure)
++ (NSError * _Nonnull)errorWithMsg:( NSString * _Nonnull )msg;
+@end
+
+@interface NSData (Encrypy)
+
 @end

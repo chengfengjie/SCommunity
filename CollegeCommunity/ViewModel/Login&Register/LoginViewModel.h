@@ -13,7 +13,5 @@
 @property (nonatomic,copy) NSString * account;
 @property (nonatomic,copy) NSString * password;
 @property (nonatomic,strong) RACCommand * loginButtonCommand;
-@property (nonatomic,strong) RACSubject * loginValidSingal;
-@property (nonatomic,strong) RACSubject * loginExecSingal;
 @property (nonatomic,assign) BOOL valid;
 @end

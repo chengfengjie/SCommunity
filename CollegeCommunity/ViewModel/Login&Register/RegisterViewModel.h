@@ -12,6 +12,7 @@
 @interface RegisterViewModel : ViewModel
 @property (nonatomic,copy) NSString * phone;
 @property (nonatomic,copy) NSString * password;
+@property (nonatomic,copy) NSString * authorizedCode;
 @property (nonatomic,strong) RACCommand * getAuthorizedCommand;
 @property (nonatomic,copy) NSString * getAuthorizedButtonTitleText;
 @property (nonatomic,strong) RACCommand * registerCommand;

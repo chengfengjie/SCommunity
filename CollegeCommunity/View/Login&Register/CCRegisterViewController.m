@@ -40,8 +40,21 @@
 - (void)bindViewModel {
     RAC(self.viewModel,phone) = self.phoneTextField.rac_textSignal;
     RAC(self.viewModel,password) = self.passwordTextField.rac_textSignal;
+    RAC(self.viewModel,authorizedCode) = self.authorizedTextField.rac_textSignal;
+    
+    self.rac_registerSingal = [RACSubject subject];
     
     @weakify(self);
+    [[self.phoneTextField rac_textSignal] subscribeNext:^(NSString * x) {
+        self.phoneTextField.text = x.length <= 11 ?(x):((self.phoneTextField.text = [x substringWithRange:NSMakeRange(0, 11)]));
+    }];
+    [self.authorizedTextField.rac_textSignal subscribeNext:^(NSString * x) {
+        self.authorizedTextField.text = x.length > 6 ? ([x substringWithRange:NSMakeRange(0, 6)]):(x);
+    }];
+    [self.passwordTextField.rac_textSignal subscribeNext:^(NSString * x) {
+        self.passwordTextField.text = x.length > 16?[x substringWithRange:NSMakeRange(0, 16)]:(x);
+    }];
+    
     [[self.getAuthorizedCodeButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         [self.view endEditing:YES];
@@ -73,6 +86,30 @@
         [self.getAuthorizedCodeButton setTitle:x forState:UIControlStateNormal];
     }];
     
+    [[self.registerButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
+        [self.view endEditing:YES];
+        [self.viewModel.registerCommand execute:nil];
+    }];
+    
+    [self.viewModel.registerCommand.errors subscribeNext:^(NSError * x) {
+        [SVProgressHUD showErrorWithStatus:x.userInfo[@"msg"]];
+    }];
+    
+    [self.viewModel.registerCommand.executionSignals subscribeNext:^(id x) {
+        @strongify(self);
+        [x subscribeNext:^(id x) {
+            if ([x[@"state"] isEqualToString:@"start"]) {
+                [SVProgressHUD showWithStatus:@"注册中..."];
+            }
+            if ([x[@"state"] isEqualToString:@"success"]) {
+                [self.rac_registerSingal sendNext:@{@"state":@"success",@"data":x[@"data"]}];
+                [SVProgressHUD showSuccessWithStatus:@"注册成功"];
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        } completed:^{
+            
+        }];
+    }];
     
 }
 
@@ -172,6 +209,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc
+{
+    NSLog(@"RegisterController dealloc");
 }
 
 /*

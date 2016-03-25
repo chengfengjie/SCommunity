@@ -22,12 +22,6 @@
     float blue = ((float)(hexColor & 0xFF))/255.0;
     return [UIColor colorWithRed:red green:green blue:blue alpha:opacity];
 }
-+ (UIColor *)lineColor {
-    return COLOR_HEXA(0xe9e9e9, 0.95);
-}
-+ (UIColor *)buttonBackgroundColor {
-    return COLOR_HEXA(0x1ac7ee, 0.95);
-}
 @end
 
 @implementation NSString (Valid)
@@ -60,6 +54,14 @@
         return YES;
     }
     return NO;
+}
+
+@end
+
+@implementation NSError (Structure)
+
++ (NSError *)errorWithMsg:( NSString * _Nonnull )msg {
+    return [NSError errorWithDomain:@"" code:1000 userInfo:@{@"msg":msg}];
 }
 
 @end

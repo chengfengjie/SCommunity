@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StyleDefine.h"
 #import "Import.h"
+#import "ReactiveCocoa-umbrella.h"
 
 @interface CCBaseTableViewController : UITableViewController
 

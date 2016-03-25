@@ -50,18 +50,28 @@
 
     RAC(self.viewModel,account)  = self.usernameTextField.rac_textSignal;
     RAC(self.viewModel,password) = self.passwordTextField.rac_textSignal;
-    self.loginButton.rac_command = self.viewModel.loginButtonCommand;
     
     @weakify(self);
-    [self.viewModel.loginValidSingal subscribeNext:^(id x) {
+    [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
-        [self.loginButton setBackgroundColor:[x boolValue]?[UIColor buttonBackgroundColor]:[UIColor grayColor]];
+        [self.viewModel.loginButtonCommand execute:nil];
     }];
-
-    [self.viewModel.loginExecSingal subscribeNext:^(id x) {
-        
-    } error:^(NSError *error) {
-        
+    [self.viewModel.loginButtonCommand.enabled subscribeNext:^(id x) {
+        @strongify(self);
+        [self.loginButton setBackgroundColor:![x boolValue]?[UIColor grayColor]:[StyleConfiguration buttonBgColor]];
+    }];
+    [self.viewModel.loginButtonCommand.errors subscribeNext:^(NSError * x) {
+        [SVProgressHUD showErrorWithStatus:x.userInfo[@"msg"]];
+    }];
+    [self.viewModel.loginButtonCommand.executionSignals subscribeNext:^(id x) {
+        [x subscribeNext:^(id x) {
+            if ([x[@"state"] isEqualToString:@"start"]) {
+                [SVProgressHUD showWithStatus:@"登录中..."];
+            }
+            if ([x[@"state"] isEqualToString:@"success"]) {
+                [SVProgressHUD showSuccessWithStatus:@"登录成功"];
+            }
+        }];
     } completed:^{
         
     }];
@@ -110,7 +120,7 @@
     }];
     
     UIView * topline = [[UIView alloc] init];
-    [topline setBackgroundColor:[UIColor lineColor]];
+    [topline setBackgroundColor:[StyleConfiguration lineColor]];
     [inputBackgroundView addSubview:topline];
     [topline mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(inputBackgroundView).with.offset(0);
@@ -140,7 +150,7 @@
     }];
     
     UIView * middleline = [[UIView alloc] init];
-    [middleline setBackgroundColor:[UIColor lineColor]];
+    [middleline setBackgroundColor:[StyleConfiguration lineColor]];
     [inputBackgroundView addSubview:middleline];
     [middleline mas_makeConstraints:^(MASConstraintMaker *make) {
         make.height.equalTo(topline.mas_height);
@@ -169,7 +179,7 @@
     //登录按钮
     self.loginButton = ({
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [btn setBackgroundColor:self.viewModel.valid?[UIColor buttonBackgroundColor]:[UIColor grayColor]];
+        [btn setBackgroundColor:self.viewModel.valid?[StyleConfiguration buttonBgColor]:[UIColor grayColor]];
         [btn.layer setCornerRadius:5];
         [btn setTitle:@"登录" forState:UIControlStateNormal];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];

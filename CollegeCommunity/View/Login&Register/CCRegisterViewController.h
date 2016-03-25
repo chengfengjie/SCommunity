@@ -9,5 +9,5 @@
 #import "CCBaseTableViewController.h"
 
 @interface CCRegisterViewController : CCBaseTableViewController
-
+@property (nonatomic,strong) RACSubject * rac_registerSingal;
 @end
