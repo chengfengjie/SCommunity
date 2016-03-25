@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ReactiveCocoa-umbrella.h"
+#import "ViewModel.h"
 
-@interface LoginViewModel : NSObject
+@interface LoginViewModel : ViewModel
 @property (nonatomic,copy) NSString * account;
 @property (nonatomic,copy) NSString * password;
 @property (nonatomic,strong) RACCommand * loginButtonCommand;

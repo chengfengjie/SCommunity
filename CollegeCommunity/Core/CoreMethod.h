@@ -18,3 +18,7 @@
 + (UIColor *)lineColor;
 + (UIColor *)buttonBackgroundColor;
 @end
+
+@interface NSString (Valid)
+- (BOOL)isPhoneNumber;
+@end

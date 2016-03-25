@@ -15,8 +15,8 @@
     self = [super init];
     if (self) {
         
-         self.loginValidSingal   = [RACSubject subject];
-         self.loginExecSingal    = [RACSubject subject];
+        self.loginValidSingal   = [RACSubject subject];
+        self.loginExecSingal    = [RACSubject subject];
         
         [self bindSingal];
     }
@@ -24,11 +24,12 @@
 }
 
 - (RACCommand *)loginButtonCommand {
-    if (_loginButtonCommand == nil) {
-        _loginButtonCommand = [[RACCommand alloc] initWithEnabled:[self validCondition] signalBlock:^RACSignal *(id input) {
-            return [RACSignal empty];
-        }];
+    if (_loginButtonCommand) {
+        return _loginButtonCommand;
     }
+    _loginButtonCommand = [[RACCommand alloc] initWithEnabled:[self validCondition] signalBlock:^RACSignal *(id input) {
+        return [RACSignal empty];
+    }];
     return _loginButtonCommand;
 }
 

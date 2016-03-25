@@ -29,3 +29,37 @@
     return COLOR_HEXA(0x1ac7ee, 0.95);
 }
 @end
+
+@implementation NSString (Valid)
+
+- (BOOL)isPhoneNumber {
+    //    NSString * MOBILE = @"^1(3[0-9]|5[0-35-9]|8[0-9])\\d{8}$";
+    NSString * MOBILE = @"^[1][34578]\\d{9}$";
+    
+    NSString * CM = @"^1(34[0-8]|(3[5-9]|5[017-9]|8[278])\\d)\\d{7}$";
+    
+    NSString * CU = @"^1(3[0-2]|5[256]|8[56])\\d{8}$";
+    
+    NSString * CT = @"^1((33|53|8[09])[0-9]|349)\\d{7}$";
+    
+    NSString * PHS=@"^(0[0-9]{2,3}\\-)?([2-9][0-9]{6,7})+(\\-[0-9]{1,4})?$";
+    
+    NSPredicate *regextestmobile = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", MOBILE];
+    
+    NSPredicate *regextestcm = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CM];//China Mobile
+    NSPredicate *regextestcu = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CU];//China Unicom
+    NSPredicate *regextestct = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT];//China Telecom
+    NSPredicate * regextestphs = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", PHS];//PHS
+    
+    if (([regextestmobile evaluateWithObject:self] == YES)
+        || ([regextestcm evaluateWithObject:self] == YES)
+        || ([regextestct evaluateWithObject:self] == YES)
+        || ([regextestcu evaluateWithObject:self] == YES)
+        ||([regextestphs evaluateWithObject:self] == YES))
+    {
+        return YES;
+    }
+    return NO;
+}
+
+@end
