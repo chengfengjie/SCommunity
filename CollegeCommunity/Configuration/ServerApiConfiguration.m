@@ -8,8 +8,8 @@
 
 #import "ServerApiConfiguration.h"
 
-NSString *const kSMSSDKAppKey = @"10ea0dd78d48c";
-NSString *const kSMSSDKAppSecret = @"7a40e732a7d41d57487fbd4a2ba03922";
+NSString *const kSMSSDKAppKey = @"";
+NSString *const kSMSSDKAppSecret = @"";
 
 @implementation ServerApiConfiguration
 
